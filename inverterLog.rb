@@ -2,25 +2,22 @@
 # Use the voltronic axpert library
 require 'voltronic/protocol'
 # Stel die inverter op
-#proto = Voltronic::Protocol.for_usb('/dev/hidVoltronic')
+proto = Voltronic::Protocol.for_usb('/dev/hidVoltronic')
 
-filenamelog = 'inverterlog_20190101.out'
+filenamelog = 'inverterlog_20190312.out'
 
 open(filenamelog, 'w') { |f|
-    f.puts "Hello, world."
     timesteplog = 2.0
-    numberlogs = 5
+    numberlogs = 3600
 
     starting = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
        
     elapsed = ending - starting
 
-    f.puts "Logging starts"
+    puts "Logging starts"
 
     while elapsed < timesteplog*numberlogs  do
-        puts("Log step" )
-
         startcycle = Process.clock_gettime(Process::CLOCK_MONOTONIC)
         endcycle = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 
@@ -31,15 +28,15 @@ open(filenamelog, 'w') { |f|
             stepelapsed = endcycle - startcycle
         end
         
-        f.puts "Log measurement"
+        puts "Log measurement"
         # Log die meting
-        #logstring proto.execute 'QPIGS'
-        #f.puts logstring
+        logstring = proto.execute 'QPIGS'
+        f.puts logstring
 
 
         ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
         elapsed = ending - starting
      end
 
-     f.puts "Logging finished"
+     puts "Logging finished"
 }
