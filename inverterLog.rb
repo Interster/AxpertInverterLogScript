@@ -31,12 +31,22 @@ open(filenamelog, 'w') { |f|
         #measurenum = "Log measurement" + elapsed.to_s
         measurenum = "Log measurement #{elapsed.round(2)}"
 
+        # Print the measurement number
         puts measurenum
-        # Log die meting
-        logstring = proto.execute 'QPIGS'
-        f.puts logstring
 
+        begin  # "try" block
+            # Log die meting
+            logstring = proto.execute 'QPIGS'
 
+            d = DateTime.now
+            tydstring = d.strftime("%d/%m/%Y %H:%M:%S")
+
+            totalestring = tydstring + " " + logstring
+            f.puts logstring
+        rescue # optionally: `rescue Exception => ex`
+            puts 'Timeout error from inverter'
+        end 
+        
         ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
         elapsed = ending - starting
      end
