@@ -4,11 +4,11 @@ require 'voltronic/protocol'
 # Stel die inverter op
 proto = Voltronic::Protocol.for_usb('/dev/hidVoltronic')
 
-filenamelog = 'inverterlog_20190312.out'
+filenamelog = 'inverterlog_20190402.out'
 
 open(filenamelog, 'w') { |f|
-    timesteplog = 2.0
-    numberlogs = 3600
+    timesteplog = 10.0
+    numberlogs = 6000
 
     starting = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
@@ -28,7 +28,10 @@ open(filenamelog, 'w') { |f|
             stepelapsed = endcycle - startcycle
         end
         
-        puts "Log measurement"
+        #measurenum = "Log measurement" + elapsed.to_s
+        measurenum = "Log measurement #{elapsed.round(2)}"
+
+        puts measurenum
         # Log die meting
         logstring = proto.execute 'QPIGS'
         f.puts logstring
