@@ -4,7 +4,10 @@ require 'voltronic/protocol'
 # Stel die inverter op
 proto = Voltronic::Protocol.for_usb('/dev/hidVoltronic')
 
-filenamelog = 'inverterlog_20190402.out'
+filenamelog = 'inverterlog_20190404.out'
+
+# Aantal keer wat gelykrigter na mekaar uitskakel
+aantalfoute = 0
 
 open(filenamelog, 'w') { |f|
     timesteplog = 10.0
@@ -37,14 +40,41 @@ open(filenamelog, 'w') { |f|
         begin  # "try" block
             # Log die meting
             logstring = proto.execute 'QPIGS'
-
+            # Haal uit die linkerhakie wat in die logstring is
+            logstring[0] = ""
+            
             d = DateTime.now
             tydstring = d.strftime("%d/%m/%Y %H:%M:%S")
 
             totalestring = tydstring + " " + logstring
-            f.puts logstring
+            f.puts totalestring
         rescue # optionally: `rescue Exception => ex`
             puts 'Timeout error from inverter'
+            aantalfoute = aantalfoute + 1
+
+            if aantalfoute > 10
+                puts "Gelykrigter kommunikasie verloor"
+
+                # Wag 5 minute voordat gelykrigter weer opgestel word
+                wagbegin = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+                wageindig = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+
+                while wageindig - wagbegin < 300.0  do
+                    wageindig = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+                end
+
+                begin
+                    # Stel weer gelykrigter op
+                    proto = Voltronic::Protocol.for_usb('/dev/hidVoltronic')
+
+                    puts 'Gelykrigter suksesvol inisialiseer'
+                rescue
+                    puts 'Kon nie gelykrigter weer inisialiseer nie'
+                end
+
+                # Stel foute terug na 0
+                aantalfoute = 0
+            end
         end 
         
         ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
