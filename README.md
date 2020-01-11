@@ -4,6 +4,8 @@ Installation from the following source:
 
 https://github.com/jovandervyver/voltronic_power_interface
 
+This entails the installation of the voltronic_power_interface ruby gem.
+
 You must sudo install the HIDRaw driver before anything will work.  This entails downloading the *.deb file if the operating system does not have HIDRaw in the package manager.
 
 Then do the following setting by executing the following command line statement:
@@ -39,3 +41,29 @@ The following text was captured from the command line to show how it works in in
     irb(main):008:0> proto.execute 'POP00'
     => "(ACK"
     irb(main):009:0> 
+
+# Scheduling
+
+It is useful to schedule the logging task using the cron service in linux.
+
+Type 
+
+`crontab -e`
+
+in the terminal to edit the scheduler.  Then add a line to start logging at for example 00:00 or 12o'clock at night:
+
+`0 0 * * * ruby /home/AxpertInverterLogScript/inverterLog.rb`
+
+# Inverter Control
+
+The inverter can be switched to different modes, eg. solar first, utility first or SBU (battery first).  The inverterOn.rb and inverterOff.rb scripts are examples of this.  The command to switch the inverter to line first is:
+
+`proto.execute 'POP00`
+
+The command to switch the inverter to solar first is:
+
+`proto.execute 'POP01`
+
+The command to switch the inverter to battery first is:
+
+`proto.execute 'POP02`
