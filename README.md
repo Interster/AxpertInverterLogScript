@@ -6,6 +6,10 @@ https://github.com/jovandervyver/voltronic_power_interface
 
 This entails the installation of the voltronic_power_interface ruby gem.
 
+`gem install voltronic_power_interface`
+
+Note this gem works best with ruby version 2.5.0.  Some syntax used in this gem is deprecated in later ruby versions.
+
 You must sudo install the HIDRaw driver before anything will work.  This entails downloading the *.deb file if the operating system does not have HIDRaw in the package manager.
 
 Then do the following setting by executing the following command line statement:
@@ -53,6 +57,16 @@ Type
 in the terminal to edit the scheduler.  Then add a line to start logging at for example 00:00 or 12o'clock at night:
 
 `0 0 * * * ruby /home/AxpertInverterLogScript/inverterLog.rb`
+
+Some installs require absolute paths for the ruby install.  An example is given here:
+
+`# Skakel inverter aan om batterykrag eerste te gebruik
+0 5 * * * /home/ubuntu/.rbenv/versions/2.5.0/bin/ruby /home/ubuntu/clones/AxpertInverterLogScript/inverterOn.rb
+# Skakel inverter af en gebruik lyn eerste
+0 16 * * * /home/ubuntu/.rbenv/versions/2.5.0/bin/ruby /home/ubuntu/clones/AxpertInverterLogScript/inverterOff.rb
+# Log die inverter se aktwiteit vir 24 uur
+0 0 * * * /home/ubuntu/.rbenv/versions/2.5.0/bin/ruby /home/ubuntu/clones/AxpertInverterLogScript/inverterLog.rb
+`
 
 # Inverter Control
 
