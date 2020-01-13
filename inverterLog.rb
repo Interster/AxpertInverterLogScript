@@ -4,14 +4,17 @@ require 'voltronic/protocol'
 # Stel die inverter op
 proto = Voltronic::Protocol.for_usb('/dev/hidVoltronic')
 
-filenamelog = 'inverterlog_20190404.out'
+d = DateTime.now
+tydstring = d.strftime("%Y%m%d")
+filenamelog = '/home/ubuntu/clones/AxpertInverterLogScript/inverterlog_' + tydstring + '.out'
 
 # Aantal keer wat gelykrigter na mekaar uitskakel
 aantalfoute = 0
 
 open(filenamelog, 'w') { |f|
     timesteplog = 10.0
-    numberlogs = 6000
+    tydinure = 24.0
+    numberlogs = tydinure*3600/timesteplog
 
     starting = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
@@ -42,7 +45,7 @@ open(filenamelog, 'w') { |f|
             logstring = proto.execute 'QPIGS'
             # Haal uit die linkerhakie wat in die logstring is
             logstring[0] = ""
-            
+
             d = DateTime.now
             tydstring = d.strftime("%d/%m/%Y %H:%M:%S")
 

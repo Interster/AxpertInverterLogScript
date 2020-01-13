@@ -1,0 +1,57 @@
+12 Jan 2020 - Baie son in oggend.  Reen teen middag.  Toe baie min son.  Son kom weer later uit vir 'n uur.  Begin nou log op die Raspberry Pi.  Vanaf net voor 22:00.
+11 Jan 2020 - Baie bewolk. Kry min sonkrag.
+10 Jan 2020 - Sit litium battery op.  3.5kWh.
+9 Jan 2020 - Beurtkrag 23:00.
+5 Jan 2020 - Beurtkrag.
+30 Des - Bewolkte dag.Son uit teen 9 uur oggend.
+29 Des - Bewolkte dag.  Meet 8.09kWh met yskas by.  Bewolkte omstandighede.
+28 Des - Bewolkte dag.  Nou is kombuis yskas voltyds op die inverter.  Vanaf half 11 die oggend.
+23 Des - Bewolkte dag.  Maar son in laatmiddag.  Het per ongeluk die log uitgevee toe logging weer begin.  Moet regtig die ruby skryf sodat dit die logging van 'n nuwe leer inkrementeer en nie die ou een oorskryf nie.
+17 Des - Bewolkte dag.  Lyk nie asof daar genoeg krag is nie.  Die battery laai elke nou en dan vanaf die lynkrag.  Sit buite vrieskas oor op lynkrag vir die vakansie.
+16 Des - Baie sonnige dag.
+15 Des - Sit nou die sonkrag aan teen 7 uur oggend.
+14 Des - Beurtkrag klaar.  Sit nou die sonkrag aan teen 8 uur oggend.  In somer moet die inverter vroeer aangesit word as in die winter.  Son is vroeer beskikbaar.
+13 Des - Beurtkrag, maar bewolk in oggend.
+12 Des - Beurtkrag maar son.  Inverter faal nie.  Kyk hoekom nie.  Miskien was daar son.
+11 Des - Beurtkrag maar son.  Inverter faal teen 5 uur middag.  Moet uitvind wat het gebeur.
+10 Des - Beurtkrag en reen weer.
+9 Des - Beurtkrag en reen weer.  
+8 Des - Beurtkrag en reen weer.  Krag gaan af 5uur en battery hou net 25 min voor dit dood is. Vee per ongeluk die begin van die dag se data uit toe log proses weer begin.
+7 Des - Beurtkrag en dit reen erg.  Baie bewolk.  Haal vrieskas af teen 16:00, want beurtkrag begin 17:00.  Probeer kyk hoe battery dalk langer kan hou.
+6 Des - Beurtkrag.  Logging is onderbreek.
+4 tot 5 Des 2019 - Reen en bewolk heel tyd.  Kyk hoe is kragproduksie met die 120V stelsel.  Vergelyk dit met die 80V stelsel en sonnige dae.
+26 Nov 2019.  Sit nog 2 panele op.  Daar is nou 6 panele in totaal.  Die panele is in 2 stringe.  Elke string is 120V.  Lyk asof dit baie meer krag lewer.  Rekenaar in sitkamer is nou vervang met 'n Raspberry pi.  Dit sal nou minder krag verbruik.  Stel van vandag af dat die sonkrag nou eers 4 uur teruggaan na lynkrag.
+2 Nov 2019.  50mm reen dit moes panele skoongemaak het.  Is daar nou meer krag?  Want dis bewolk en die panele lewer baie krag.
+18 Okt 2019.  Loadshedding 2 maal.
+17 Okt 2019.  Loadshedding 2 maal.
+16 Okt 2019.  Loadshedding 2 maal.  Trek battery leeg 2 keer. Battery hou nou amper net halfuur.
+13 Okt 2019.  Sonkrag het nie aangeskakel nie.  Het op lynkrag geloop.  Dit kon gister ook so gewees het.  Kyk asb.
+13 Sept 2019. Die solar opsie het nie afgegaan om 3 uur nie.  Sit dit terug na lynkrag om 16:47. 
+9 Sept 2019. Die solar opsie het nie afgegaan om 3 uur nie.  Sit dit terug na lynkrag om 18:23. Kyk hoe lank het battery gehou met hierdie keer.  Dit gee idee van hoe lank die battery sal werk.  Kyk ook hoeveel energie dit vat om te laai.
+8 Sept 2019 Die solar opsie het nie afgegaan om 3 uur nie.  Sit dit terug na lynkrag om 17:03
+7 Sept 2019 Was bewolk
+4 Sept 2019 Lees 9.198kWh gelewer aan inverter.
+3 Sept 2019 Lees 9.69kWh gelewer aan inverter.  Vergelyk dit met die energie gelewer berekening.  Bereken hoeveel elke gebruiker sal gebruik per dag en vergelyk.  Die verskil is wat die inverter gebruik.
+31 Aug 2019.  Vee die stof op die panele af.  Vergelyk 1 Sep met 31 Aug om te kyk of dit help om meer krag te genereer.
+30 Aug 2019.  Die script wat terugskakel na lynkrag om 15:00 het nie gewerk nie.  Die battery het gehou tot 17:22 en het nie pap geword nie.  Dit is 'n baie groot verbetering.  Kyk na hierdie data vir batterylewe.  Die krag is teruggesit na lynkrag om 17:22.
+29 Aug 2019.  Sit die battery tipe oor na "Flooded".  Dit is program 5 in die Axpert.  Dit was tot nou toe op AGM gestel.  Die batterye wat gebruik word is beslis flooded lead acid.  Stel ook maksimum utility charging current af na 2A. Dit is program 11 op die inverter.  Instelling is gedoen ongeveer 01:00 in die oggend.
+
+Tussen 30 Julie en 2 Augustus kan aangeneem word dat die battery afgeloop het na 0 elke dag.  Neem dit konserwatief aan in die lewe van die battery berekening.
+
+10 Aug 2019 bewolkte dag. Sit dit oor na lyn in om 12:24.  Son skyn weer 12:54.  Sit weer op solar first.
+3 Aug 2019 krag weer aan.  Doen 16:11 toets om te kyk of battery nog steeds so vinnig afloop.  Sit dit eers op SBU.  Las is 2 vrieskaste en 'n TV en rekenaars.  (Laptop en rekenaar).  Stop die toets 17:17
+2 Aug 2019 Krag af.  Begin log 19:28 om te kyk hoe battery afloop.  Het net skootrekenaar vir log op.  TV aan teen 19:00 as deel van toets.  Die battery is sonder las gelaai die hele dag.  Toets of dit battery lewe aanhelp.
+1 Aug 2019 Krag af.  Begin log 18:27 om te kyk hoe battery afloop.  Het net skootrekenaar vir log op.  TV aan teen 19:00 as deel van toets.
+31 Jul krag nog steeds af.  Doen nou SBU toetse (loop eerste van battery voor dit laai vanaf die generator).  Loop 2 vrieskaste. Maar sit die vrieskaste in die nag af wanneer die generator af is.
+30 Jul krag af in die nag en loop op die battery.  Inverter trek battery tot minimum teen 8:30.  Die 48V instelling is te laag.  Dit moet hoer wees as die krag heeltemal faal.
+Probeer weer log teen 12:00 aand.  Oftewel 00:00 uur.  Die battery word tussen 20:50 en later gelaai deur generator.  As battery laai vanaf die generator is die spanning op die battery 56.4V.  Stel die battery voltage uitskop terug na die 46V verstek waarde en kyk hoe lank die logging kan voortgaan.  Voordat battery weer leegloop. Stop tweede lesing teen 22:05.  Wag vir log om aan te gaan om 0:00 outomaties.
+Loop weer teen 21:08 die ruby logscript om die battery laai te log.
+25 en 26 Jul die battery loop die hele nag.  Kyk hoeveel het ontlaai.
+21 tot 23 Jul Sit yskas by die las vir die langnaweek.
+3 Jul Sit yskas by die las vir die langnaweek.
+11 Jun Sit twee panele by in parallel.
+08 Mei Bewolk
+24 Apr bietjie reen en bewolk
+23 Apr
+22 Apr baie bewolk, reen na 3 uur
+21 Apr wolke verby son partykeer
