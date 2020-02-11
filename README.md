@@ -81,3 +81,25 @@ The command to switch the inverter to solar first is:
 The command to switch the inverter to battery first is:
 
 `proto.execute 'POP02`
+
+
+
+
+
+# Alternatiewe metodes om Axpert met python te beheer
+
+Gebruik die volgende bronne om 'n python intervlak te maak vir die Axpert.  Moet dan die battery hierby integreer.
+
+
+
+Webwerf waar hulle die Axpert logging bespreek:
+
+ https://forums.aeva.asn.au/viewtopic.php?t=5830&start=100 
+
+Repositories met logging sagteware:
+
+ https://github.com/JosefKrieglstein/AxpertControl 
+
+ https://github.com/jvandervyver/VoltronicLibJava 
+
+ https://github.com/MindFreeze/hassio-axpert 
